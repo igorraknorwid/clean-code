@@ -142,8 +142,23 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     label.classList.add("complited");
+    var containsClass=listItem.classList.contains("todo-app__item_edit");
+    if(containsClass){
+        //switch to .editmode
+        //label becomes the inputs value.
+        var editBtn=listItem.querySelector(".edit");
+        label.innerText=editInput.value;
+        editBtn.innerText="Edit";
+        listItem.classList.remove("todo-app__item_edit");
+        listItem.classList.add("todo-app__item");
+        label.classList.remove("todo-app__item-label_edit");
+        label.classList.add("todo-app__item-label");
+        editInput.classList.remove("todo-app__item-input_edit");
+        editInput.classList.add("todo-app__item-input");
+    }
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
