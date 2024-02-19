@@ -101,7 +101,7 @@
 }
 
 /* Task list */
-.todo-app__item {
+.todo-app__item,.todo-app__item_edit {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -110,7 +110,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.todo-app__item > * {
+.todo-app__item > *,.todo-app__item_edit > * {
   vertical-align: middle;
 }
 
@@ -122,7 +122,7 @@
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
-}
+}     
 .todo-app__item-input {
   width: 226px;
 }
@@ -136,7 +136,7 @@
 }
 
 /* Completed */
-.todo-app__item-label_complited {
+.complited {
   text-decoration: line-through;
   color: #888;
 }
