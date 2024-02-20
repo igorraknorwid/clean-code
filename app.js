@@ -171,7 +171,7 @@ var taskIncomplete=function(){
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
     var label=listItem.querySelector("label");
-    label.classList.add("complited");
+    label.classList.remove("complited");
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
